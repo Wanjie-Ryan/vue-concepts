@@ -6,16 +6,25 @@ import { createStore } from 'vuex'
 const store = createStore({
     state() {
         return {
-            counter: 0
+            counter: 5
         }
     },
     // mutations is the same as method which is utilized in components for writing logic, but now for global
-    mutations:{
 
-        increment(state){
-            state.counter++
+    // passing data to a mutation via payloads
+    //mutations are syncrhonous
+    mutations: {
+
+        increment(state, payload) {
+            // state.counter++
+            state.counter = state.counter + payload
         }
 
+    },
+    getters: {
+        getCounter(state) {
+            return state.counter
+        }
     }
 })
 

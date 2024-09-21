@@ -15,7 +15,7 @@
   <button @click="hidehehe">Hide</button>
   <p v-if="show">Hehe</p>
 
-  <p>{{ $store.state.counter }}</p>
+  <p>{{ $store.getters.getCounter }}</p>
 
   <button @click="incrementState">+</button>
 
@@ -52,7 +52,7 @@ export default {
    },
    incrementState:function(){
     // this.$store.state.counter++
-    this.$store.commit('increment')
+    this.$store.commit('increment', 45)
    }
   },
   computed: {
