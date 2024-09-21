@@ -51,7 +51,8 @@ export default {
     this.show = false
    },
    incrementState:function(){
-    this.$store.state.counter++
+    // this.$store.state.counter++
+    this.$store.commit('increment')
    }
   },
   computed: {
